@@ -9,6 +9,9 @@ import { Bien } from './liste/bien';
 
 @Injectable({ providedIn: 'root' })
 export class BienService {
+  push(bien: Bien) {
+    throw new Error('Method not implemented.');
+  }
 
   private biensUrl = 'api/biens';  // URL to web api
 
@@ -42,12 +45,8 @@ export class BienService {
   }
 
   /** GET bien by id. Will 404 if id not found */
-  getBien(id: number): Observable<Bien> {
-    const url = `${this.biensUrl}/${id}`;
-    return this.http.get<Bien>(url).pipe(
-      tap(_ => this.log(`fetched bien id=${id}`)),
-      catchError(this.handleError<Bien>(`getBien id=${id}`))
-    );
+  getBien(): Observable<Bien[]> {
+    return this.http.get<Bien[]>(this.biensUrl)
   }
 
   /* GET bienes whose name contains search term */

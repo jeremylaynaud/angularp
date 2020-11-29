@@ -1,2 +1,32 @@
 <p>liste works!</p>
-<li *ngFor="let bien of listeBiens">{{bien.name}}</li>
+<div>
+    <label>Titre:
+      <input #heroName />
+    </label>
+    <label>Description:
+        <input #heroTitre />
+    </label>
+    <label>image:
+      <input #heroImages />
+    </label>
+    <label>catégories:
+      <input #heroCategories />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(heroName.value, heroTitre.value, heroImages.value, heroCategories.value); heroName.value=''">
+      add
+    </button>
+</div>
+<div class="card-content" >
+    <div class="card-block " *ngFor="let bien of heroes">
+        <div class="card" style="width: 18rem;">
+            <img src="{{bien.images}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{bien.titre}}</h5>
+              <p class="card-text">{{bien.descrisption}}</p>
+              <button id='delete'  (click)='delete(bien)' style='margin-left: 20px'>Supprimer</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
