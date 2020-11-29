@@ -1,7 +1,7 @@
 export class Bien{
     id: number
-    name: string
-    // description: string
-    // images: string
-    // categories: string;
+    titre: string
+    descrisption: string
+    images: string
+    catégories: string
 }

@@ -4,7 +4,7 @@ import { ListeComponent } from './liste/liste.component';
 import { AccueilComponent } from './accueil/accueil.component';
 
 const routes: Routes = [
-  { path: 'accueil', component: AccueilComponent },
+  { path: '', component: AccueilComponent },
   { path: 'liste', component: ListeComponent }
 ];
 
